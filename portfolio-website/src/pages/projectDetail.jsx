@@ -8,7 +8,7 @@ const projects = [
     name: 'CPCLeServe', 
     link: 'https://github.com/Tamilmughilan/CPCLeServe',
     description: `The CPCL eServe Mobile App is designed for Chennai Petroleum Corporation Limited (CPCL), a central government refinery, to provide seamless and efficient digital services. The app is ready to be deployed on CPCL's servers and integrates features to streamline employee operations and interactions.`,
-    images: ['/assets/cpcl1.jpg', '/assets/cpcl2.jpg'],
+    images: ['../assets/cpcl1.jpg', '/assets/cpcl2.jpg'],
     screenRecording: '/assets/cpcl_video.mp4',
   },
   { 
