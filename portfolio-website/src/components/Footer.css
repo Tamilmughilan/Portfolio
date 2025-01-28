@@ -1,0 +1,27 @@
+/* Footer.css */
+
+.footer {
+    position: fixed; /* Fix the footer at the bottom of the page */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Arial', sans-serif;
+    z-index: 1000; /* Ensures it stays above other content */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for a nice effect */
+  }
+  
+  /* Optional: Adding some hover effects */
+  .footer p {
+    margin: 0;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer:hover p {
+    color: #1e90ff; /* Change the text color on hover */
+  }
+  

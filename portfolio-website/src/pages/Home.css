@@ -1,0 +1,91 @@
+.home {
+    background: linear-gradient(120deg, #21052a, #58496d);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 50px; /* Added extra space at the bottom */
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+  }
+  
+  .profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 50px;
+    animation: slideIn 1s ease-out;
+  }
+  
+  .name h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .text-box {
+    width: 60%; /* Reduced to ensure better positioning */
+    background-color: rgba(0, 0, 0, 0.6); /* Smoother transparency */
+    color: rgb(57, 9, 65);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    position: relative;
+  }
+  
+  .profile-image {
+    width: 200px; /* Defined size for uniform circular shape */
+    height: 200px; /* Ensure the shape is perfectly circular */
+    margin-left: 20px;
+    padding: 15px;
+    background-color: rgba(83, 38, 89, 0.5); /* Slightly lower opacity */
+    border-radius: 40%; /* Ensures the shape is circular */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 40%; /* Ensures the image stays circular */
+    object-fit: cover; /* Ensures proper scaling inside the circle */
+  }
+  
+  .profile-image:hover {
+    transform: scale(1.1); /* Keeps the hover effect */
+  }
+  
+  /* Added padding to the bottom of the about-section for spacing */
+  .about-section {
+    margin-bottom: 100px; /* Extra margin to avoid footer overlap */
+  }
+  
+  /* Animation for the profile section */
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
