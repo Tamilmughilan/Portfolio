@@ -2,13 +2,29 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import './ProjectDetail.css';
 
+// Import images
+import cpcl1 from '../assets/cpcl1.jpg';
+import cpcl2 from '../assets/cpcl2.jpg';
+import scrape1 from '../assets/scrape1.jpg';
+import django1 from '../assets/django1.jpg';
+import django2 from '../assets/django2.jpg';
+import django3 from '../assets/django3.jpg';
+import django4 from '../assets/django4.jpg';
+import parse1 from '../assets/parse1.png';
+import parse2 from '../assets/parse2.png';
+import parse3 from '../assets/parse3.png';
+import parse4 from '../assets/parse4.png';
+import quiz1 from '../assets/quiz1.jpg';
+import quiz2 from '../assets/quiz2.jpg';
+import quiz3 from '../assets/quiz3.jpg';
+
 const projects = [
   { 
     id: 1,
     name: 'CPCLeServe', 
     link: 'https://github.com/Tamilmughilan/CPCLeServe',
     description: `The CPCL eServe Mobile App is designed for Chennai Petroleum Corporation Limited (CPCL), a central government refinery, to provide seamless and efficient digital services. The app is ready to be deployed on CPCL's servers and integrates features to streamline employee operations and interactions.`,
-    images: ['../assets/cpcl1.jpg', '/assets/cpcl2.jpg'],
+    images: [cpcl1, cpcl2],
     screenRecording: '/assets/cpcl_video.mp4',
   },
   { 
@@ -20,7 +36,7 @@ const projects = [
 Tech Stack
 Python: Ensure you have Python 3.6 or higher installed on your machine.
 Google API Client: This project uses Google’s API client to interact with the YouTube API.`,
-    images: ['/assets/scrape1.jpg'],
+    images: [scrape1],
     screenRecording: '/assets/django.mp4',
   },
   { 
@@ -36,7 +52,7 @@ Features:
 - Authentication for WebSockets to prevent unauthorized access
 - Profile management with username and profile picture
 - Persistent message storage in the database`,
-    images: ['/assets/django1.jpg', '/assets/django2.jpg', '/assets/django3.jpg', '/assets/django4.jpg'],
+    images: [django1, django2, django3, django4],
     screenRecording: '',
   },
   { 
@@ -61,7 +77,7 @@ Key Features:
 - Candidate Sorting          : Automatically sorts and filters candidates based on resume-JD compatibility and ATS scores, providing a ranked list of suitable candidates.
 
 This project simplifies recruitment by combining automation, efficiency, and accurate evaluation.`,
-    images: ['/assets/parse1.png', '/assets/parse2.png', '/assets/parse3.png', '/assets/parse4.png'],
+    images: [parse1, parse2, parse3, parse4],
     screenRecording: '',
   },
   { 
@@ -81,7 +97,7 @@ Technologies Used
 - Flutter
 - Dart
 - Provider for state management`,
-    images: ['/assets/quiz1.jpg', '/assets/quiz2.jpg', '/assets/quiz3.jpg'],
+    images: [quiz1, quiz2, quiz3],
     screenRecording: '/assets/quiz_app.mp4',
   },
 ];
@@ -104,7 +120,7 @@ function ProjectDetail() {
         <div className="screenshots">
           {project.images.length > 0 ? (
             project.images.map((img, index) => (
-              <img key={index} src={process.env.PUBLIC_URL + img} alt={`Screenshot ${index + 1}`} />
+              <img key={index} src={img} alt={`Screenshot ${index + 1}`} />
             ))
           ) : (
             <p className="no-data">No screenshots available</p>
@@ -113,7 +129,7 @@ function ProjectDetail() {
 
         {project.screenRecording ? (
           <video controls>
-            <source src={process.env.PUBLIC_URL + project.screenRecording} type="video/mp4" />
+            <source src={project.screenRecording} type="video/mp4" />
           </video>
         ) : (
           <p className="no-data">No screen recording available</p>
