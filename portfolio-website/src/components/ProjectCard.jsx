@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 function ProjectCard({ project }) {
   return (
     <motion.div
-      whileHover={{ scale: 1.05 }}
+      whileHover={{ scale: 1.2}}
       transition={{ type: 'spring', stiffness: 300 }}
       className="project-card"
     >

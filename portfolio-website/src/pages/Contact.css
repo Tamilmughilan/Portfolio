@@ -1,63 +1,99 @@
-.contact {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: linear-gradient(120deg, #21052a, #58496d);    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: Arial, sans-serif;
-    padding: 100px;
+/* Contact Page Styles */
+.contact-page2 {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Added padding to avoid content sticking to edges */
+}
+
+/* Space-themed Animation */
+.space-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle, #660879ab 0%, #000000 100%);
+  animation: space-move 20s linear infinite;
+}
+
+@keyframes space-move {
+  0% {
+    background-position: 0 0;
   }
-  
-  .contact h2 {
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Contact Container */
+.contact-container2 {
+  max-width: 600px;
+  width: 90%; /* Adjusted width for better responsiveness */
+  padding: 2rem;
+  background: linear-gradient(120deg, #1b0323, #322249);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1;
+  margin-top: 0px; /* Reduced top margin to minimize wasted space */
+}
+
+.contact-container2 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #d507d8;
+  text-shadow: 2px 2px 8px rgba(76, 24, 91, 0.8);
+}
+
+.contact-container2 p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Contact Info */
+.contact-info2 {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+.contact-info2 p {
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.contact-info2 a {
+  text-decoration: none;
+  color: #ff79c6;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-info2 a:hover {
+  color: #d507d8;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  .contact-container2 {
+    padding: 1.5rem;
+    margin-top:5x; /* Further reduced top margin for smaller screens */
+  }
+
+  .contact-container2 h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #ffffff;
   }
-  
-  .contact p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: #fffefe;
-  }
-  
-  .contact-info {
-    margin-top: 1.5rem;
+
+  .contact-container2 p,
+  .contact-info2 p {
     font-size: 1rem;
   }
-  
-  .contact-info p {
-    margin-bottom: 0.5rem;
-  }
-  
-  .contact-info a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .contact-info a:hover {
-    color: #0056b3;
-  }
-  
-  .contact-info p:last-child {
-    margin-bottom: 0;
-  }
-  
-  /* Add responsiveness */
-  @media (max-width: 768px) {
-    .contact {
-      padding: 1.5rem;
-    }
-  
-    .contact h2 {
-      font-size: 1.75rem;
-    }
-  
-    .contact p,
-    .contact-info p {
-      font-size: 0.9rem;
-    }
-  }
-  
+}

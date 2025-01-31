@@ -1,58 +1,65 @@
 /* Navbar styling */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: rgba(0, 0, 0, 0.6); /* Transparent background */
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-    transition: background-color 0.3s ease; /* Smooth transition for background change */
-  }
-  
-  .navbar:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Darken background on hover */
-  }
-  
-  .navbar .logo h2 {
-    font-size: 30px;
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  .nav-links {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
-  }
-  
-  .nav-links a {
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #ff79c6; /* Pink color on hover */
-    transform: scale(1.1); /* Slight scaling effect on hover */
-  }
-  
-  .nav-links a:active {
-    color: #bd93f9; /* Purple color when clicked */
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.6); /* Transparent background */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease; /* Smooth transition for background change */
+}
+
+.navbar:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darken background on hover */
+}
+
+.navbar .logo h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff79c6; /* Pink color on hover */
+  transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+.nav-links a:active {
+  color: #bd93f9; /* Purple color when clicked */
+}
+
+.logo img {
+  height: 40px; /* Adjusted to fit within the navbar */
+  width: auto;
+  max-width: 100px; /* Prevents the logo from stretching too much */
+  object-fit: contain; /* Ensures it maintains proportions */
+}
+

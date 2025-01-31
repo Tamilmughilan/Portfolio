@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css'; // Make sure to import the correct CSS file for styling
+import './Navbar.css';
+import logo from '../assets/logo1.png'; // Ensure the path is correct
 
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <h2>Tamil Mughilan</h2>
+        <img src={logo} alt="Logo" className="logo-image" />
       </div>
       <div className="nav-links">
         <Link to="/">Home</Link>

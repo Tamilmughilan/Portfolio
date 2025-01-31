@@ -1,0 +1,162 @@
+/* About Page Styles */
+.about-page2 {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Space-themed Animation */
+  .space-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle, #660879ab 0%, #000000 100%);
+    animation: space-move 20s linear infinite;
+  }
+  
+  @keyframes space-move {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+  
+  /* Sections */
+  .section2 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .left-aligned {
+    text-align: left;
+    align-items: flex-start;
+    padding-left: 10%;
+  }
+  
+  .right-aligned {
+    text-align: right;
+    align-items: flex-end;
+    padding-right: 10%;
+  }
+  
+  .about-header2 h1 {
+    font-size: 4rem;
+    color: #a689d1;
+    text-shadow: 2px 2px 8px rgba(76, 24, 91, 0.8);
+    margin-bottom: 1rem;
+  }
+  
+  .about-header2 p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    line-height: 1.6;
+  }
+  
+  .about-education2 h2,
+  .about-skills2 h2,
+  .about-projects2 h2 {
+    font-size: 3rem;
+    color: #d507d8;
+    margin-bottom: 1rem;
+  }
+  
+  .about-education2 ul,
+  .about-skills2 ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .about-education2 li,
+  .about-skills2 li {
+    margin-bottom: 10px;
+  }
+  
+  /* Project Cards */
+  .project-list2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .project-card2 {
+    background: linear-gradient(120deg, #1b0323, #322249);
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card2 h3 {
+    font-size: 1.5rem;
+    color: #ff79c6;
+    margin-bottom: 10px;
+  }
+  
+  .project-card2 ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .project-card2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Scroll Indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 100px; /* Adjusted to make it visible without scrolling */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .scroll-indicator span {
+    margin-bottom: 10px;
+  }
+  
+  .arrow {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(183, 50, 231, 0.8);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0) rotate(45deg);
+    }
+    40% {
+      transform: translateY(-10px) rotate(45deg);
+    }
+    60% {
+      transform: translateY(-5px) rotate(45deg);
+    }
+  }
