@@ -25,8 +25,7 @@ const projects = [
     link: 'https://github.com/Tamilmughilan/CPCLeServe',
     description: `The CPCL eServe Mobile App is designed for Chennai Petroleum Corporation Limited (CPCL), a central government refinery, to provide seamless and efficient digital services. The app is ready to be deployed on CPCL's servers and integrates features to streamline employee operations and interactions.`,
     images: [cpcl1, cpcl2],
-    youtubeUrl: 'https://youtu.be/KGPek00NTPc',
-    youtubeEmbedId: 'KGPek00NTPc',
+    videoEmbed: 'https://www.youtube.com/embed/KGPek00NTPc',
   },
   { 
     id: 5,
@@ -38,8 +37,7 @@ Tech Stack
 Python: Ensure you have Python 3.6 or higher installed on your machine.
 Google API Client: This project uses Google's API client to interact with the YouTube API.`,
     images: [scrape1],
-    youtubeUrl: 'https://youtu.be/uvcHlsURvmY',
-    youtubeEmbedId: 'uvcHlsURvmY',
+    videoEmbed: 'https://www.youtube.com/embed/uvcHlsURvmY',
   },
   { 
     id: 3,
@@ -56,8 +54,7 @@ Features:
 -Persistent message storage in the database
 `,
     images: [django1, django2, django3, django4],
-    youtubeUrl: '',
-    youtubeEmbedId: '',
+    videoEmbed: '',
   },
   { 
     id: 2,
@@ -65,8 +62,7 @@ Features:
     link: 'https://github.com/Tamilmughilan/AlumniManagement',
     description: `The Alumni Management System is a project focused on digitizing alumni interactions, enabling better communication and collaboration between alumni and the institution. It provides tools for managing alumni data, organizing events, and fostering a strong alumni network.`,
     images: [],
-    youtubeUrl: '',
-    youtubeEmbedId: '',
+    videoEmbed: '',
   },
   
   { 
@@ -84,8 +80,7 @@ Key Features:
 
 This project simplifies recruitment by combining automation, efficiency, and accurate evaluation.`,
     images: [parse1, parse2, parse3, parse4],
-    youtubeUrl: '',
-    youtubeEmbedId: '',
+    videoEmbed: '',
   },
   { 
     id: 6,
@@ -105,8 +100,7 @@ Technologies Used
 -Dart
 -Provider for state management`,
     images: [quiz1, quiz2, quiz3],
-    youtubeUrl: 'https://youtu.be/1Tp-jVzCrjk',
-    youtubeEmbedId: '1Tp-jVzCrjk',
+    videoEmbed: 'https://www.youtube.com/embed/1Tp-jVzCrjk',
   },
 ];
 
@@ -135,32 +129,20 @@ function ProjectDetail() {
           )}
         </div>
 
-        {project.youtubeEmbedId ? (
+        {project.videoEmbed ? (
           <div className="video-container">
-            <h3>Demo Video</h3>
-            <div className="youtube-embed">
-              <iframe
-                width="100%"
-                height="315"
-                src={`https://www.youtube.com/embed/${project.youtubeEmbedId}`}
-                title={`${project.name} Demo`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <p>
-              <a 
-                href={project.youtubeUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Watch on YouTube
-              </a>
-            </p>
+            <iframe 
+              width="100%" 
+              height="400" 
+              src={project.videoEmbed} 
+              title={`${project.name} demo`}
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen>
+            </iframe>
           </div>
         ) : (
-          <p className="no-data">No demo video available</p>
+          <p className="no-data">No screen recording available</p>
         )}
       </div>
     </div>
