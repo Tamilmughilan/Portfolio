@@ -18,15 +18,15 @@ import quiz1 from '../assets/quiz1.jpg';
 import quiz2 from '../assets/quiz2.jpg';
 import quiz3 from '../assets/quiz3.jpg';
 
-
 const projects = [
   { 
     id: 1,
     name: 'CPCLeServe', 
     link: 'https://github.com/Tamilmughilan/CPCLeServe',
     description: `The CPCL eServe Mobile App is designed for Chennai Petroleum Corporation Limited (CPCL), a central government refinery, to provide seamless and efficient digital services. The app is ready to be deployed on CPCL's servers and integrates features to streamline employee operations and interactions.`,
-    images: ['/assets/cpcl1.jpg', '/assets/cpcl2.jpg'],
-    screenRecording: '/assets/cpcl_video.mp4',
+    images: [cpcl1, cpcl2],
+    youtubeUrl: 'https://youtu.be/KGPek00NTPc',
+    youtubeEmbedId: 'KGPek00NTPc',
   },
   { 
     id: 5,
@@ -36,9 +36,10 @@ const projects = [
 
 Tech Stack
 Python: Ensure you have Python 3.6 or higher installed on your machine.
-Google API Client: This project uses Google’s API client to interact with the YouTube API.`,
-    images: ['/assets/scrape1.jpg'],
-    screenRecording: '/assets/django.mp4',
+Google API Client: This project uses Google's API client to interact with the YouTube API.`,
+    images: [scrape1],
+    youtubeUrl: 'https://youtu.be/uvcHlsURvmY',
+    youtubeEmbedId: 'uvcHlsURvmY',
   },
   { 
     id: 3,
@@ -54,8 +55,9 @@ Features:
 -Profile management with username and profile picture
 -Persistent message storage in the database
 `,
-    images: ['/assets/django1.jpg','/assets/django2.jpg','/assets/django3.jpg','/assets/django4.jpg'],
-    screenRecording: '',
+    images: [django1, django2, django3, django4],
+    youtubeUrl: '',
+    youtubeEmbedId: '',
   },
   { 
     id: 2,
@@ -63,7 +65,8 @@ Features:
     link: 'https://github.com/Tamilmughilan/AlumniManagement',
     description: `The Alumni Management System is a project focused on digitizing alumni interactions, enabling better communication and collaboration between alumni and the institution. It provides tools for managing alumni data, organizing events, and fostering a strong alumni network.`,
     images: [],
-    screenRecording: '',
+    youtubeUrl: '',
+    youtubeEmbedId: '',
   },
   
   { 
@@ -80,8 +83,9 @@ Key Features:
 - Candidate Sorting          : Automatically sorts and filters candidates based on resume-JD compatibility and ATS scores, providing a ranked list of suitable candidates.
 
 This project simplifies recruitment by combining automation, efficiency, and accurate evaluation.`,
-    images: ['/assets/parse1.png','/assets/parse2.png','/assets/parse3.png','/assets/parse4.png'],
-    screenRecording: '',
+    images: [parse1, parse2, parse3, parse4],
+    youtubeUrl: '',
+    youtubeEmbedId: '',
   },
   { 
     id: 6,
@@ -100,10 +104,10 @@ Technologies Used
 -Flutter
 -Dart
 -Provider for state management`,
-    images: ['/assets/quiz1.jpg','/assets/quiz2.jpg','/assets/quiz3.jpg'],
-    screenRecording: '/assets/quiz_app.mp4',
+    images: [quiz1, quiz2, quiz3],
+    youtubeUrl: 'https://youtu.be/1Tp-jVzCrjk',
+    youtubeEmbedId: '1Tp-jVzCrjk',
   },
-  
 ];
 
 function ProjectDetail() {
@@ -116,31 +120,50 @@ function ProjectDetail() {
 
   return (
     <div className="project-detail-container">
-  <div className="project-detail">
-    <h2>{project.name}</h2>
-    <p>{project.description}</p>
-    <a href={project.link} target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+      <div className="project-detail">
+        <h2>{project.name}</h2>
+        <p>{project.description}</p>
+        <a href={project.link} target="_blank" rel="noopener noreferrer">GitHub Repository</a>
 
-    <div className="screenshots">
-      {project.images.length > 0 ? (
-        project.images.map((img, index) => (
-          <img key={index} src={img} alt={`Screenshot ${index + 1}`} />
-        ))
-      ) : (
-        <p className="no-data">No screenshots available</p>
-      )}
+        <div className="screenshots">
+          {project.images.length > 0 ? (
+            project.images.map((img, index) => (
+              <img key={index} src={img} alt={`Screenshot ${index + 1}`} />
+            ))
+          ) : (
+            <p className="no-data">No screenshots available</p>
+          )}
+        </div>
+
+        {project.youtubeEmbedId ? (
+          <div className="video-container">
+            <h3>Demo Video</h3>
+            <div className="youtube-embed">
+              <iframe
+                width="100%"
+                height="315"
+                src={`https://www.youtube.com/embed/${project.youtubeEmbedId}`}
+                title={`${project.name} Demo`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <p>
+              <a 
+                href={project.youtubeUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Watch on YouTube
+              </a>
+            </p>
+          </div>
+        ) : (
+          <p className="no-data">No demo video available</p>
+        )}
+      </div>
     </div>
-
-    {project.screenRecording ? (
-      <video controls>
-        <source src={project.screenRecording} type="video/mp4" />
-      </video>
-    ) : (
-      <p className="no-data">No screen recording available</p>
-    )}
-  </div>
-</div>
-
   );
 }
 
