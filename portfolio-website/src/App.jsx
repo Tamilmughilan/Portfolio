@@ -7,11 +7,11 @@ import ProjectDetail from './pages/projectDetail';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
   return (
-    <Router basename="/Portfolio">
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

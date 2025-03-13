@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tamil Mughilan Portfolio</title>
-    <!-- Add this script for GitHub Pages SPA routing -->
+    <!-- Script for GitHub Pages SPA routing -->
     <script type="text/javascript">
       (function(l) {
         if (l.search[1] === '/' ) {
@@ -15,6 +15,21 @@
           window.history.replaceState(null, null,
               l.pathname.slice(0, -1) + decoded + l.hash
           );
+        }
+        
+        // Handle the p= redirect parameter to restore the path
+        var redirect = l.search.match(/[?&]p=([^&]+)/);
+        if (redirect) {
+          var cleanPath = redirect[1].replace(/~and~/g, '&');
+          window.history.replaceState(null, null, cleanPath || '/');
+          
+          // Handle any query parameters
+          var query = l.search.match(/[?&]q=([^&]+)/);
+          if (query) {
+            window.history.replaceState(null, null, 
+              window.location.pathname + '?' + query[1].replace(/~and~/g, '&') + window.location.hash
+            );
+          }
         }
       }(window.location))
     </script>
