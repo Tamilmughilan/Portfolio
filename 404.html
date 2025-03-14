@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tamil Mughilan Portfolio</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      var segmentCount = 0;
+      var l = window.location;
+      
+      // Save the path and query in the redirect
+      var path = l.pathname.split('/').slice(0, 1 + segmentCount).join('/');
+      var redirectPath = path + '/?p=' + 
+          l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~');
+      
+      // Add query parameters if they exist
+      if (l.search) {
+        redirectPath += (redirectPath.indexOf('?') === -1 ? '?' : '&') + 
+            'q=' + l.search.slice(1).replace(/&/g, '~and~');
+      }
+      
+      // Add hash if it exists
+      if (l.hash) {
+        redirectPath += l.hash;
+      }
+      
+      // Redirect to the index.html
+      l.replace(redirectPath);
+    </script>
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+  </body>
+</html>
