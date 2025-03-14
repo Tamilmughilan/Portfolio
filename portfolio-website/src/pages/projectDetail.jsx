@@ -2,19 +2,14 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import './ProjectDetail.css';
 
-// Define base URL for assets (adjust based on your environment)
-const BASE_URL = import.meta.env.MODE === 'development' 
-  ? '' 
-  : '/Portfolio/'; // Update this if needed based on your GitHub Pages setup
-
-// Projects data with updated image paths
+// Projects data with absolute image paths
 const projects = [
   { 
     id: 1,
     name: 'CPCLeServe', 
     link: 'https://github.com/Tamilmughilan/CPCLeServe',
     description: `The CPCL eServe Mobile App is designed for Chennai Petroleum Corporation Limited (CPCL), a central government refinery, to provide seamless and efficient digital services. The app is ready to be deployed on CPCL's servers and integrates features to streamline employee operations and interactions.`,
-    images: [`${BASE_URL}assets/cpcl1.jpg`, `${BASE_URL}assets/cpcl2.jpg`],
+    images: ['/Portfolio/assets/cpcl1.jpg', '/Portfolio/assets/cpcl2.jpg'],
     videoEmbed: 'https://www.youtube.com/embed/KGPek00NTPc',
   },
   { 
@@ -26,7 +21,7 @@ const projects = [
 Tech Stack
 Python: Ensure you have Python 3.6 or higher installed on your machine.
 Google API Client: This project uses Google's API client to interact with the YouTube API.`,
-    images: [`${BASE_URL}assets/scrape1.jpg`],
+    images: ['/Portfolio/assets/scrape1.jpg'],
     videoEmbed: 'https://www.youtube.com/embed/uvcHlsURvmY',
   },
   { 
@@ -44,10 +39,10 @@ Features:
 -Persistent message storage in the database
 `,
     images: [
-      `${BASE_URL}assets/django1.jpg`, 
-      `${BASE_URL}assets/django2.jpg`, 
-      `${BASE_URL}assets/django3.jpg`, 
-      `${BASE_URL}assets/django4.jpg`
+      '/Portfolio/assets/django1.jpg', 
+      '/Portfolio/assets/django2.jpg', 
+      '/Portfolio/assets/django3.jpg', 
+      '/Portfolio/assets/django4.jpg'
     ],
     videoEmbed: '',
   },
@@ -75,10 +70,10 @@ Key Features:
 
 This project simplifies recruitment by combining automation, efficiency, and accurate evaluation.`,
     images: [
-      `${BASE_URL}assets/parse1.png`, 
-      `${BASE_URL}assets/parse2.png`, 
-      `${BASE_URL}assets/parse3.png`, 
-      `${BASE_URL}assets/parse4.png`
+      '/Portfolio/assets/parse1.png', 
+      '/Portfolio/assets/parse2.png', 
+      '/Portfolio/assets/parse3.png', 
+      '/Portfolio/assets/parse4.png'
     ],
     videoEmbed: '',
   },
@@ -100,9 +95,9 @@ Technologies Used
 -Dart
 -Provider for state management`,
     images: [
-      `${BASE_URL}assets/quiz1.jpg`, 
-      `${BASE_URL}assets/quiz2.jpg`, 
-      `${BASE_URL}assets/quiz3.jpg`
+      '/Portfolio/assets/quiz1.jpg', 
+      '/Portfolio/assets/quiz2.jpg', 
+      '/Portfolio/assets/quiz3.jpg'
     ],
     videoEmbed: 'https://www.youtube.com/embed/1Tp-jVzCrjk',
   },
@@ -111,6 +106,11 @@ Technologies Used
 function ProjectDetail() {
   const { id } = useParams();
   const project = projects.find((project) => project.id === parseInt(id));
+
+  // Adding console logs for debugging
+  console.log("Project ID from params:", id);
+  console.log("Project found:", project);
+  console.log("Image paths:", project ? project.images : []);
 
   if (!project) {
     return <div>Project not found</div>;
