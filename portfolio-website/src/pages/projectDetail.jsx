@@ -2,29 +2,19 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import './ProjectDetail.css';
 
-// Import images
-import cpcl1 from '../assets/cpcl1.jpg';
-import cpcl2 from '../assets/cpcl2.jpg';
-import scrape1 from '../assets/scrape1.jpg';
-import django1 from '../assets/django1.jpg';
-import django2 from '../assets/django2.jpg';
-import django3 from '../assets/django3.jpg';
-import django4 from '../assets/django4.jpg';
-import parse1 from '../assets/parse1.png';
-import parse2 from '../assets/parse2.png';
-import parse3 from '../assets/parse3.png';
-import parse4 from '../assets/parse4.png';
-import quiz1 from '../assets/quiz1.jpg';
-import quiz2 from '../assets/quiz2.jpg';
-import quiz3 from '../assets/quiz3.jpg';
+// Define base URL for assets (adjust based on your environment)
+const BASE_URL = import.meta.env.MODE === 'development' 
+  ? '' 
+  : '/Portfolio/'; // Update this if needed based on your GitHub Pages setup
 
+// Projects data with updated image paths
 const projects = [
   { 
     id: 1,
     name: 'CPCLeServe', 
     link: 'https://github.com/Tamilmughilan/CPCLeServe',
     description: `The CPCL eServe Mobile App is designed for Chennai Petroleum Corporation Limited (CPCL), a central government refinery, to provide seamless and efficient digital services. The app is ready to be deployed on CPCL's servers and integrates features to streamline employee operations and interactions.`,
-    images: [cpcl1, cpcl2],
+    images: [`${BASE_URL}assets/cpcl1.jpg`, `${BASE_URL}assets/cpcl2.jpg`],
     videoEmbed: 'https://www.youtube.com/embed/KGPek00NTPc',
   },
   { 
@@ -36,7 +26,7 @@ const projects = [
 Tech Stack
 Python: Ensure you have Python 3.6 or higher installed on your machine.
 Google API Client: This project uses Google's API client to interact with the YouTube API.`,
-    images: [scrape1],
+    images: [`${BASE_URL}assets/scrape1.jpg`],
     videoEmbed: 'https://www.youtube.com/embed/uvcHlsURvmY',
   },
   { 
@@ -53,7 +43,12 @@ Features:
 -Profile management with username and profile picture
 -Persistent message storage in the database
 `,
-    images: [django1, django2, django3, django4],
+    images: [
+      `${BASE_URL}assets/django1.jpg`, 
+      `${BASE_URL}assets/django2.jpg`, 
+      `${BASE_URL}assets/django3.jpg`, 
+      `${BASE_URL}assets/django4.jpg`
+    ],
     videoEmbed: '',
   },
   { 
@@ -79,7 +74,12 @@ Key Features:
 - Candidate Sorting          : Automatically sorts and filters candidates based on resume-JD compatibility and ATS scores, providing a ranked list of suitable candidates.
 
 This project simplifies recruitment by combining automation, efficiency, and accurate evaluation.`,
-    images: [parse1, parse2, parse3, parse4],
+    images: [
+      `${BASE_URL}assets/parse1.png`, 
+      `${BASE_URL}assets/parse2.png`, 
+      `${BASE_URL}assets/parse3.png`, 
+      `${BASE_URL}assets/parse4.png`
+    ],
     videoEmbed: '',
   },
   { 
@@ -99,7 +99,11 @@ Technologies Used
 -Flutter
 -Dart
 -Provider for state management`,
-    images: [quiz1, quiz2, quiz3],
+    images: [
+      `${BASE_URL}assets/quiz1.jpg`, 
+      `${BASE_URL}assets/quiz2.jpg`, 
+      `${BASE_URL}assets/quiz3.jpg`
+    ],
     videoEmbed: 'https://www.youtube.com/embed/1Tp-jVzCrjk',
   },
 ];

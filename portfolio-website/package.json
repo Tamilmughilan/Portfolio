@@ -2,16 +2,16 @@
   "name": "portfolio-website",
   "private": true,
   "version": "0.0.0",
- "homepage": "https://tamilmughilan.github.io",
+ "homepage": "https://tamilmughilan.github.io/Portfolio",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  },
+  "dev": "vite",
+  "build": "vite build && cp public/404.html dist/",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+},
   "dependencies": {
     "framer-motion": "^12.0.5",
     "lottie-react": "^2.4.1",
