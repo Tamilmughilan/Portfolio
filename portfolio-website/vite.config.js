@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/Portfolio/', // Change this to match your GitHub Pages setup
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    copyPublicDir: true,
   }
 });
